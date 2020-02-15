@@ -69,7 +69,7 @@ if [[ -n "${PUBLIC_HOST_ADDR}" && -n "${PUBLIC_HOST_PORT}" ]]; then
     echo "=> Setting up the reverse ssh tunnel"
     while true
     do
-        sshpass -p ${ROOT_PASS} autossh -M 0 -o StrictHostKeyChecking=no -NgR 1080:localhost:${PROXY_PORT} root@${PUBLIC_HOST_ADDR} -p ${PUBLIC_HOST_PORT}
+        sshpass -p ${ROOT_PASS} autossh -M 0 -o StrictHostKeyChecking=no -NgR 1080:192.168.31.60:${PROXY_PORT} root@${PUBLIC_HOST_ADDR} -p ${PUBLIC_HOST_PORT}
         echo "=> Tunnel Link down!"
         echo "=> Wait 15 seconds to reconnect"
         sleep 15
